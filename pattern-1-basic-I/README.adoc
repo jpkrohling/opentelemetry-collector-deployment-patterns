@@ -4,6 +4,12 @@ This pattern comprises a scenario where clients are instrumented using OTLP, sen
 
 If you don't have a client readily available, you can use the https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/tracegen["tracegen"] utility to generate traces.
 
+.Basic I
+image::basic-I.png[]
+
+.Basic II - Fanout
+image::basic-II.png[]
+
 == Running
 
 [source,bash]
