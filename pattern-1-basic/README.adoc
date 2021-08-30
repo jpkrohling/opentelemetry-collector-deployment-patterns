@@ -1,4 +1,4 @@
-= Pattern #1 - Basic I
+= Pattern #1 - Basic
 
 This pattern features a scenario where clients are instrumented using OTLP, sending data to a cluster of collectors configured with a file similiar to `config.yaml` from this repository. To get this scenario working, you'll need to have a Jaeger instance running.
 
@@ -6,6 +6,8 @@ If you don't have a client readily available, you can use the https://github.com
 
 .Basic I
 image::basic-I.png[]
+
+A variant of this pattern includes a fanout, sending data to multiple exporters.
 
 .Basic II - Fanout
 image::basic-II.png[]
