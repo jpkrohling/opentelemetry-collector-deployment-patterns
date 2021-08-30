@@ -1,0 +1,14 @@
+= Pattern #1 - Basic I
+
+This pattern comprises a scenario where clients are instrumented using OTLP, sending data to a cluster of collectors configured with a file similiar to `config.yaml` from this repository. To get this scenario working, you'll need to have a Jaeger instance running.
+
+If you don't have a client readily available, you can use the https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/tracegen["tracegen"] utility to generate traces.
+
+== Running
+
+[source,bash]
+----
+podman run -p 14250:14250 -p 16686:16686 jaegertracing/all-in-one:1.24 --log-level=debug
+otelcontribcol_linux_amd64 --config config.yaml
+tracegen -otlp-insecure -otlp-endpoint localhost:4317 -traces 1
+----

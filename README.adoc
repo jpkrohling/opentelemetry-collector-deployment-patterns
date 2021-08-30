@@ -1,0 +1,9 @@
+= OpenTelemetry Collector deployment patterns
+
+This repository accompanies the presentation https://sched.co/lV0z["OpenTelemetry Collector deployment patterns"], part of the KubeCon North America 2021.
+
+== Patterns
+
+All of the configuration files are meant to be used with the Contrib distribution of https://github.com/open-telemetry/opentelemetry-collector-contrib[OpenTelemetry Collector] and were tested with the v0.33.0 release.
+
+- link:./pattern-1-basic-I/[#1, Basic I]
