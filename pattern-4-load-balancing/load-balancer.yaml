@@ -1,0 +1,27 @@
+receivers:
+  otlp:
+    protocols:
+      grpc:
+        endpoint: localhost:4317
+
+processors:
+
+exporters:
+  loadbalancing:
+    protocol:
+      otlp:
+        insecure: true
+    resolver:
+      static:
+        hostnames:
+        - localhost:5317
+        - localhost:6317
+  
+service:
+  pipelines:
+    traces:
+      receivers:
+        - otlp
+      processors: []
+      exporters:
+        - loadbalancing
