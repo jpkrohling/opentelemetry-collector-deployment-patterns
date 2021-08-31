@@ -1,0 +1,21 @@
+extensions:
+
+receivers:
+  otlp:
+    protocols:
+      grpc:
+
+processors:
+
+exporters:
+  otlp:
+    endpoint: localhost:5317
+    insecure: true
+
+service:
+  extensions: []
+  pipelines:
+    traces:
+      receivers: [otlp]
+      processors: []
+      exporters: [otlp]

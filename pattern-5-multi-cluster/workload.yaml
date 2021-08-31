@@ -1,0 +1,24 @@
+extensions:
+  bearertokenauth:
+    token: 'eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJjX0xSS2lFR2pHUTI4UllMMlhPRU11M2dEamI0el9wTUZQcWJxRDNzMm00In0.eyJleHAiOjE2MzA0MjY4MDAsImlhdCI6MTYzMDQyNjUwMCwianRpIjoiODM5MTdmNWEtYjcwMi00ZmEzLWFjZjYtNDliNzZjZjA4YTRlIiwiaXNzIjoiaHR0cDovL2xvY2FsaG9zdDo4MDgwL2F1dGgvcmVhbG1zL29wZW50ZWxlbWV0cnkiLCJhdWQiOlsiY29udHJvbC1wbGFuZSIsImFjY291bnQiXSwic3ViIjoiZjkwN2QxODAtOGY0ZS00MTkxLTg4ODktNDY2MWFhMWU2MzgyIiwidHlwIjoiQmVhcmVyIiwiYXpwIjoid29ya2xvYWQiLCJhY3IiOiIxIiwicmVhbG1fYWNjZXNzIjp7InJvbGVzIjpbIm9mZmxpbmVfYWNjZXNzIiwidW1hX2F1dGhvcml6YXRpb24iLCJkZWZhdWx0LXJvbGVzLW9wZW50ZWxlbWV0cnkiXX0sInJlc291cmNlX2FjY2VzcyI6eyJhY2NvdW50Ijp7InJvbGVzIjpbIm1hbmFnZS1hY2NvdW50IiwibWFuYWdlLWFjY291bnQtbGlua3MiLCJ2aWV3LXByb2ZpbGUiXX19LCJzY29wZSI6InByb2ZpbGUgZW1haWwiLCJlbWFpbF92ZXJpZmllZCI6ZmFsc2UsImNsaWVudEhvc3QiOiIxMC4wLjIuMTAwIiwiY2xpZW50SWQiOiJ3b3JrbG9hZCIsInByZWZlcnJlZF91c2VybmFtZSI6InNlcnZpY2UtYWNjb3VudC13b3JrbG9hZCIsImNsaWVudEFkZHJlc3MiOiIxMC4wLjIuMTAwIn0.k8RnR5P1TQ8kA3uEfm233b3MgfxIQK3IEwrhIKjk0Da6miEs6ydqKnW5nl5ji29p09U6AmU4fL9AmqP4WAbmvV4qEVV3atFca1acZVeCVVcmjkUXaRDooNQ-3Qy9prOfCErkVI_VsBM0bRJenN8T0idhltuum5SXJyMLAJIC-pQB5BOs_UTaPLkw-r_UugX97RytB0xfrUNqwT6hlp4fNLaq5HxE3qAUguRxbVAT0xgEo6JRMPHcO5h_3TOO8EcpIlDgANIfBrPMxaELqBSS71oapgueQAxnnZ9a6k5AlJBO_xfX_T_NCeykfY2yVuiVyrJ8NXwjsjTKtJRoLe0J7Q'
+
+receivers:
+  otlp:
+    protocols:
+      grpc:
+        endpoint: localhost:5317
+
+processors:
+
+exporters:
+  otlp:
+    endpoint: localhost:6317
+    ca_file: ca.pem
+
+service:
+  extensions: []
+  pipelines:
+    traces:
+      receivers: [otlp]
+      processors: []
+      exporters: [otlp]

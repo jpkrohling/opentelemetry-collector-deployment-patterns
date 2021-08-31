@@ -1,0 +1,28 @@
+extensions:
+  oidc:
+    issuer_url: http://localhost:8080/auth/realms/opentelemetry
+    audience: control-plane
+
+receivers:
+  otlp:
+    protocols:
+      grpc:
+        endpoint: localhost:6317
+        tls_settings:
+          cert_file: control-plane.pem
+          key_file: control-plane-key.pem
+
+processors:
+
+exporters:
+  jaeger:
+    endpoint: localhost:14250
+    insecure: true
+
+service:
+  extensions: []
+  pipelines:
+    traces:
+      receivers: [otlp]
+      processors: []
+      exporters: [jaeger]
