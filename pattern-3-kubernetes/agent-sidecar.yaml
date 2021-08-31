@@ -1,0 +1,35 @@
+extensions:
+
+receivers:
+  prometheus:
+    config:
+      scrape_configs:
+        - job_name: "my-app"
+          scrape_interval: 5s
+          static_configs:
+            - targets: ["0.0.0.0:9090"]
+
+  jaeger:
+    protocols:
+      grpc:
+      thrift_binary:
+      thrift_compact:
+
+processors:
+
+exporters:
+  otlp:
+    endpoint: my-otelcol.observability.svc.cluster.local:4317
+    insecure: true
+
+service:
+  extensions: []
+  pipelines:
+    metrics:
+      receivers: [prometheus]
+      processors: []
+      exporters: [otlp]
+    traces:
+      receivers: [jaeger]
+      processors: []
+      exporters: [otlp]

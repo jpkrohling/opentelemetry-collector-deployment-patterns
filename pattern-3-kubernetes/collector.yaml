@@ -1,0 +1,21 @@
+extensions:
+
+receivers:
+  otlp:
+    protocols:
+      grpc:
+
+processors:
+
+exporters:
+  jaeger:
+    endpoint: my-jaeger.observability.svc.cluster.local:14250
+    insecure: true
+
+service:
+  extensions: []
+  pipelines:
+    traces:
+      receivers: [otlp]
+      processors: []
+      exporters: [jaeger]
