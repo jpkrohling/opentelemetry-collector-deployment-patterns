@@ -1,0 +1,34 @@
+extensions:
+
+receivers:
+  otlp:
+    protocols:
+      grpc:
+
+processors:
+  routing:
+    from_attribute: tenant
+    default_exporters: jaeger/acme
+    table:
+      - value: acme
+        exporters: [jaeger/acme]
+      - value: ecorp
+        exporters: [jaeger/ecorp]
+
+exporters:
+  jaeger/acme:
+    endpoint: localhost:14250
+    insecure: true
+  jaeger/ecorp:
+    endpoint: localhost:15250
+    insecure: true
+
+service:
+  extensions: []
+  pipelines:
+    traces:
+      receivers: [otlp]
+      processors: [routing]
+      exporters:
+        - jaeger/acme
+        - jaeger/ecorp

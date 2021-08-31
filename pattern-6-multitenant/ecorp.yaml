@@ -1,0 +1,24 @@
+extensions:
+
+receivers:
+  otlp:
+    protocols:
+      grpc:
+        endpoint: localhost:6317
+
+processors:
+
+exporters:
+  otlp:
+    endpoint: localhost:4317
+    insecure: true
+    headers:
+      tenant: ecorp
+
+service:
+  extensions: []
+  pipelines:
+    traces:
+      receivers: [otlp]
+      processors: []
+      exporters: [otlp]

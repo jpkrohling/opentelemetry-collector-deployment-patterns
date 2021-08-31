@@ -1,0 +1,24 @@
+extensions:
+
+receivers:
+  otlp:
+    protocols:
+      grpc:
+        endpoint: localhost:5317
+
+processors:
+
+exporters:
+  otlp:
+    endpoint: localhost:4317
+    insecure: true
+    headers:
+      tenant: acme
+
+service:
+  extensions: []
+  pipelines:
+    traces:
+      receivers: [otlp]
+      processors: []
+      exporters: [otlp]
