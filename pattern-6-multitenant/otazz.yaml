@@ -18,10 +18,12 @@ processors:
 exporters:
   jaeger/acme:
     endpoint: localhost:14250
-    insecure: true
+    tls:
+      insecure: true
   jaeger/ecorp:
     endpoint: localhost:15250
-    insecure: true
+    tls:
+      insecure: true
 
 service:
   extensions: []
