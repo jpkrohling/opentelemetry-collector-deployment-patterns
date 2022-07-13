@@ -13,4 +13,4 @@ image::daemonset.png[]
 
 == Running
 
-The blog post https://medium.com/opentelemetry/deploying-the-opentelemetry-collector-on-kubernetes-2256eca569c9:["Deploying the OpenTelemetry Collector on Kubernetes"] shows in details how to achieve both scenarios. The https://github.com/open-telemetry/opentelemetry-operator/:[OpenTelemetry Operator] can also be used for that, including the ability to inject sidecars into the workload pods automatically.
+The blog post https://medium.com/opentelemetry/deploying-the-opentelemetry-collector-on-kubernetes-2256eca569c9["Deploying the OpenTelemetry Collector on Kubernetes"] shows in details how to achieve both scenarios. The https://github.com/open-telemetry/opentelemetry-operator/[OpenTelemetry Operator] can also be used for that, including the ability to inject sidecars into the workload pods automatically.
