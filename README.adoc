@@ -1,6 +1,6 @@
 = OpenTelemetry Collector deployment patterns
 
-This repository accompanies the presentation https://sched.co/lV0z["OpenTelemetry Collector deployment patterns"], part of the KubeCon North America 2021.
+This repository accompanies the presentation https://sched.co/lV0z["OpenTelemetry Collector deployment patterns"], part of the KubeCon North America 2021. The slides can be found on the link above, or directly on link:slides.pdf[this repository].
 
 == Patterns
 
