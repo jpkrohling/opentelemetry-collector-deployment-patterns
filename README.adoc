@@ -8,3 +8,8 @@ All of the configuration files are meant to be used with the Contrib distributio
 
 - link:./pattern-1-basic/[#1, Basic]
 - link:./pattern-2-normalizer/[#2, Normalizer]
+- link:./pattern-3-kubernetes/[#3, On Kubernetes]
+- link:./pattern-4-load-balancing/[#4, Load-balancing]
+- link:./pattern-5-multi-cluster/[#5, Multi-cluster]
+- link:./pattern-6-multitenant/[#6, Multitenant]
+- link:./pattern-7-per-signal/[#7, Per signal]
