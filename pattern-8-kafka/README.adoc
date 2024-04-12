@@ -5,7 +5,7 @@ The second level of collector features our consumer level (e.g., KafkaReceiver) 
 
 There are numerous benefits to send OpenTelemetry data to Kafka before sending it to the collector, including but not limited to:
 
-- Decoupling and Buffering: Kafka acts as a buffer between the collector and the telemetry backend. This allows our telemetry data continue to be produced even if the backend is experiencing issues or the consumer level is temporarily unavailable.
+- Decoupling and Buffering: Kafka acts as a buffer between the collector and the telemetry backend. This allows our telemetry data to continue being produced even if the backend is experiencing issues or the consumer level is temporarily unavailable.
 - Scaling and throughput: Kafka is designed to be scalable. We can just add or remove brokers and also increase throughput by just resizing the number of partitions in a topic.
 - Reliability: Kafka features exactly-once delivery method, meaning the telemetry data will be delivered to the collector in a reliable way without duplicates or data loss.
 
