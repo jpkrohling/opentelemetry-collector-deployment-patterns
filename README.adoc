@@ -13,3 +13,4 @@ All of the configuration files are meant to be used with the Contrib distributio
 - link:./pattern-5-multi-cluster/[#5, Multi-cluster]
 - link:./pattern-6-multitenant/[#6, Multitenant]
 - link:./pattern-7-per-signal/[#7, Per signal]
+- link:./pattern-8-kafka/[#8, Kafka]
